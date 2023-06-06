@@ -1,0 +1,43 @@
+@import "reset";
+@import "variables";
+@import "mixins";
+
+body {
+    font-family: Montserrat, sans-serif;
+    .background-color {
+        height: 100vh;
+        width: 100%;
+        background: linear-gradient($prim-bg, $sec-bg);
+        position: fixed;
+        top: 0;
+        z-index: -100;
+    }
+    h1, h2, h3, h4, p, a, li, label, input, textarea, button, small {
+        color: $prim-color;
+        text-shadow: $text-shadow-dark;
+    }
+    h1, h2, h3, h4 {
+        text-align: center;
+        word-break: break-word;
+    }
+    h1 {font-size: 5rem};
+    h2 {font-size: 3.5rem};
+    h3 {font-size: 2.5rem};
+    h4 {font-size: 1.4rem};
+    p, a, li, label, input, textarea, button {font-size: 1.4rem};
+    p {
+        line-height: $line-height;
+        word-spacing: 7px;
+        padding: 15px 0;
+        text-align: justify;
+        align-self: stretch;
+    }
+    a {
+        color: $prim-color;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    img {
+        object-fit: cover;
+    }
+}

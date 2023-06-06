@@ -1,0 +1,40 @@
+<style>
+  div.header-text-animation {
+    display: inline-block;    
+  }
+  div.header-text-animation > h4 {
+    border-right: solid 2px;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: 
+      typing 2s steps(40),
+      cursor .4s step-end infinite alternate;
+  }
+  @keyframes typing {
+    from { 
+      width: 0 
+    }
+  }
+  @keyframes cursor {
+    50% { 
+      border-color: transparent; 
+    }
+  }
+</style>
+
+<header id="top">
+    <picture>
+      <source srcSet="../../assets/bannerSmall.jpg" media="(max-width: 850px)" />
+      <source srcSet="../../assets/bannerMid.jpg" media="(max-width: 1600px)" />
+      <source srcSet="../../assets/bannerHigh.jpg" />
+      <img src="../../assets/banner.JPG" alt="The belowsurface.de banner" />
+    </picture>
+
+    <div class="banner">
+        <h1>Below Surface</h1>
+        <div class="header-text-animation">
+          <h4>The passionate Web Developer from Bonn</h4>
+        </div>
+    </div>
+</header>

@@ -1,0 +1,170 @@
+@import "reset";
+@import "variables";
+@import "mixins";
+
+// Navigation for screens above 1500px width
+@media screen and (min-width: 1500px) {
+    nav {
+        z-index: 3000;
+        position: fixed;
+        top: 50%;
+        left: -250px;
+        transform: translateY(-50%);
+        transition: all .7s ease;
+        width: 285px;
+        background-color: rgba(255,255,255,0.2);
+        border-radius: 5px;
+        box-shadow: $box-shadow-dark;
+        @include flexBox;
+        justify-content: space-between;
+        > div {
+            @include flexBox;
+            flex-direction: column;
+            margin-right: 15px;
+            > a {
+                color: $sec-color;
+                margin: 10px 0;
+                border-bottom: solid 2px transparent;
+            }  
+            > a:hover {
+                border-bottom: solid 2px $sec-color;
+            }
+            // "Navigation" text on sidenav
+            p {
+                font-size: 1.5rem;
+                left: 200px;
+                position: absolute;
+                transform: rotate(270deg);
+            }
+        }
+    }
+    nav:hover {
+        cursor: pointer;
+        left: -100px;
+        flex-direction: row-reverse;
+        background-color:rgba(255, 255, 255, 0.8);
+        // "Navigation" text on sidenav
+        p {
+            left: 0px;
+        }
+    }
+    nav::after {
+        content: '';
+        position: absolute;
+        top: -50px;
+        right: -100px;
+        bottom: -50px;
+        width: 300px;
+        z-index: -1;
+    }
+}
+
+// Navigation trigger button for screens smaller than 1500px
+.navigation-trigger {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 5px 10px;
+    margin: 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: top .4s;
+    display: none;
+    .nav-icon {
+        width: 55px;
+        height: 45px;
+        position: relative;
+        margin: 10px 5px;
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: .5s ease-in-out;
+        -moz-transition: .5s ease-in-out;
+        -o-transition: .5s ease-in-out;
+        transition: .5s ease-in-out;
+        cursor: pointer;
+        span {
+            display: block;
+            position: absolute;
+            height: 6px;
+            width: 100%;
+            background: $prim-color;
+            border-radius: 9px;
+            opacity: 1;
+            left: 0;
+            -webkit-transform: rotate(0deg);
+            -moz-transform: rotate(0deg);
+            -o-transform: rotate(0deg);
+            transform: rotate(0deg);
+            -webkit-transition: .25s ease-in-out;
+            -moz-transition: .25s ease-in-out;
+            -o-transition: .25s ease-in-out;
+            transition: .25s ease-in-out;
+        }
+        span:nth-child(1) {top: 0px;}
+        span:nth-child(2) {top: 18px;}
+        span:nth-child(3) {top: 36px;}
+    }
+    .open span:nth-child(1) {
+        top: 18px;
+        -webkit-transform: rotate(135deg);
+        -moz-transform: rotate(135deg);
+        -o-transform: rotate(135deg);
+        transform: rotate(135deg);
+    }
+    .open span:nth-child(2) {
+        opacity: 0;
+        left: -60px;
+    }
+    .open span:nth-child(3) {
+        top: 18px;
+        -webkit-transform: rotate(-135deg);
+        -moz-transform: rotate(-135deg);
+        -o-transform: rotate(-135deg);
+        transform: rotate(-135deg);
+    }
+}
+.navigation-button-hidden {
+    top: -100px;
+}
+
+// Navigation for screens under 1500px width
+@media screen and (max-width: 1499px) {
+    .navigation-trigger {
+        display: block;
+    }
+    nav {
+        height: 100vh;
+        width: 100vw;
+        position: fixed;
+        top: 0;
+        z-index: 99;
+        background: rgba(0, 0, 0, .9);
+        display: none;
+        > div {
+            height: 100%;
+            overflow: scroll;
+            @include flexBox;
+            flex-direction: column;
+            justify-content: center;
+            > a {
+                color: $prim-color;
+                margin: 25px 0 0;
+                font-size: 3rem;
+                border-bottom: solid 3px transparent;
+            }
+            > a:hover {
+                border-bottom: solid 3px $prim-color;
+            }
+            .active {
+                border-bottom: solid 3px $prim-color;
+            }
+        }
+    }
+    .navigation-shown {
+        display: block;
+    }
+}

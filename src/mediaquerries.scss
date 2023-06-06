@@ -1,0 +1,225 @@
+@import "reset";
+@import "variables";
+@import "mixins";
+
+@media screen and (max-width: 1500px) {
+    :root {
+        font-size: 90%;
+    }
+    header {
+        .banner {  
+            > h1 {
+                font-size: 4rem;
+            }
+            > h1::before,
+            > h1::after {
+                margin: 0 10px;
+            }
+            > h4 {
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
+@media screen and (max-width: 1050px) {
+    .navigation-trigger {
+        .nav-icon {
+            width: 40px;
+            height: 35px;
+            span {
+                height: 5.5px;
+            }
+            span:nth-child(1) {top: 0px;}
+            span:nth-child(2) {top: 15px;}
+            span:nth-child(3) {top: 30px;}
+        }
+        .open span:nth-child(1) {
+            top: 18px;
+        }
+        .open span:nth-child(3) {
+            top: 18px;
+        }
+    }
+    header {
+        .banner {  
+            > h1::before,
+            > h1::after {
+                content: none;
+            }
+            > div {
+                > h4 {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 800px) {
+    :root {
+        font-size: 85%;
+    }
+    header {
+        > .banner {
+            > div {
+                flex-direction: column;
+                > h4 {
+                    font-size: 1.5rem;
+                    margin: 10px 0;
+                }
+                > h4:nth-of-type(1)::after,
+                > h4:nth-of-type(2)::after {
+                    content: none;
+                }
+            }
+        }
+    }
+    .navigation-trigger {
+        .nav-icon {
+            width: 40px;
+            span {
+                height: 5px;
+            }
+        }
+    }
+    h1, h2 {
+        display: flex;
+        flex-direction: column;
+    }
+    main {
+        > div {
+            min-height: 0;
+        }
+        h2 {
+            margin-top: 25px;
+        }
+        .about-flexbox {
+            flex-direction: column;
+            p, img {
+                margin: 0 0 35px;
+            }
+            img {
+                width: 250px;
+                height: 250px;
+            }
+        }
+        .projects-flexbox {
+            flex-direction: column-reverse;
+            p, img {
+                margin: 0 0 35px;
+            }
+            img {
+                display: none;
+            }
+        }
+        div.projects-second-flexbox {
+            div.project-text {
+                flex-direction: column;
+                > div,
+                > ul {
+                    width: 100%;
+                }
+            }
+            &:nth-of-type(odd) div.project-text {
+                flex-direction: column;
+            }
+        }
+        .skills-first-flexbox {
+            flex-direction: column;
+            p, img {
+                margin: 0 0 35px;
+            }
+            img {
+                display: none;
+            }
+        }
+        .contact {
+            >form {
+                max-width: 85%;
+            }
+        }
+        .impressum {
+            > h2 {
+                margin: 0;
+                font-size: 3rem;
+            }
+        }
+    }
+    footer {
+        .content {
+            .links {
+                @include flexBox;
+                flex-direction: column;
+                > a {
+                    margin: 10px 0;
+                    border-bottom: solid 2px transparent;
+                }
+                > a:hover {
+                    border-bottom: solid 2px $prim-color;
+                }
+            }
+        }
+        .bottom-text {
+            width: 100%;
+            p, a {
+                font-size: 1rem;
+                margin: auto;
+            }
+        }
+    }
+}
+@media screen and (max-width: 500px) {
+    :root {
+        font-size: 70%;
+    }
+    body p {
+        line-height: 1.5;
+        word-spacing: 3px;
+    }
+    nav {
+        > div {
+            > a {
+                font-size: 2rem;
+            }
+        }
+    }
+    .navigation-trigger {
+        margin: 15px;
+        .nav-icon {
+            width: 35px;
+            margin: 5px;
+            span {
+                height: 4px;
+            }
+        }
+    }
+    main {
+        > div {
+            width: 95%;
+        }
+        .about-flexbox {
+            p, img {
+                margin: 0 0 10px;
+            }
+            img {
+                width: 200px;
+                height: 200px;
+            }
+        }
+        .skills-second-flexbox {
+            margin: 0;
+        }
+        .contact {
+            > form {
+                max-width: calc( 85% - 30px);
+                padding: 25px 15px;
+            }
+        } 
+    }
+    footer {
+        .content {
+            h1 {
+                font-size: 3rem;
+            }
+        }
+    }
+}
