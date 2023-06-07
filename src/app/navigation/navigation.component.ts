@@ -7,28 +7,18 @@ import { Component, HostListener, Renderer2, OnInit } from '@angular/core';
 })
 
 export class NavigationComponent {
-
-  navigation = false;
-  navigationHidden = true;
+  navigation: boolean;
+  navigationHidden: boolean;
   scrollUp: boolean;
   currentScrollPos: number;
   prevScrollPos: number;
 
   constructor(private renderer: Renderer2) {
-    this.scrollUp = false;
+    this.navigation = false;
     this.navigationHidden = false;
+    this.scrollUp = false;
     this.currentScrollPos = 0;
     this.prevScrollPos = 0;
-  }
-
-  ngOnInit() {
-    // Check the initial window size
-    if (window.innerWidth <= 1500) {
-      this.navigationHidden = true;
-    }
-
-    // Call the scroll event handler
-    this.onScroll();
   }
 
   @HostListener('window:scroll', [])
@@ -55,8 +45,12 @@ export class NavigationComponent {
     }
   }
 
-  triggerNavigation() {
-    this.navigation = !this.navigation;
+  ngOnInit() {
+    if (window.innerWidth <= 1500) {
+      this.navigationHidden = true;
+    }
+
+    this.onScroll();
   }
 
   toggleNavigation() {
