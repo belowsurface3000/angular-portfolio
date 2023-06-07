@@ -34,3 +34,21 @@
         }
     }
 }
+
+@media screen and (max-width: 800px) {
+    .skills-first-flexbox {
+        flex-direction: column;
+        p, img {
+            margin: 0 0 35px;
+        }
+        img {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .skills-second-flexbox {
+        margin: 0;
+    }
+}

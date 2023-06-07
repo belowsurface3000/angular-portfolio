@@ -88,3 +88,27 @@
 div.projects-second-flexbox:nth-of-type(odd) div.project-text {
     flex-direction: row-reverse;
 }
+
+@media screen and (max-width: 800px) {
+    .projects-flexbox {
+        flex-direction: column-reverse;
+        p, img {
+            margin: 0 0 35px;
+        }
+        img {
+            display: none;
+        }
+    }
+    .projects-second-flexbox {
+        .project-text {
+            flex-direction: column;
+            > div,
+            > ul {
+                width: 100%;
+            }
+        }
+        &:nth-of-type(odd) div.project-text {
+            flex-direction: column;
+        }
+    }
+}

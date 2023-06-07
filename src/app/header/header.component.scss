@@ -40,3 +40,39 @@ header {
         }
     }
 }
+
+@media screen and (max-width: 1500px) {
+    
+    header {
+        .banner {  
+            > h1 {
+                font-size: 4rem;
+            }
+            > h1::before,
+            > h1::after {
+                margin: 0 10px;
+            }
+            > h4 {
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    header {
+        > .banner {
+            > div {
+                flex-direction: column;
+                > h4 {
+                    font-size: 1.5rem;
+                    margin: 10px 0;
+                }
+                > h4:nth-of-type(1)::after,
+                > h4:nth-of-type(2)::after {
+                    content: none;
+                }
+            }
+        }
+    }
+}

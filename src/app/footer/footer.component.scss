@@ -61,3 +61,39 @@ footer {
         }
     }
 }
+
+@media screen and (max-width: 800px) {
+    footer {
+        .content {
+            .links {
+                @include flexBox;
+                flex-direction: column;
+                > a {
+                    margin: 10px 0;
+                    border-bottom: solid 2px transparent;
+                }
+                > a:hover {
+                    border-bottom: solid 2px $prim-color;
+                }
+            }
+        }
+        
+        .bottom-text {
+            width: 100%;
+            p, a {
+                font-size: 1rem;
+                margin: auto;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    footer {
+        .content {
+            h1 {
+                font-size: 3rem;
+            }
+        }
+    }
+}

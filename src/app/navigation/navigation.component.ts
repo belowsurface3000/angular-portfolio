@@ -22,7 +22,6 @@ export class NavigationComponent {
   }
 
   ngOnInit() {
-    console.log(this.navigationHidden)
     // Check the initial window size
     if (window.innerWidth <= 1500) {
       this.navigationHidden = true;

@@ -9,3 +9,28 @@
         @include basicImage;
     }
 }
+
+@media screen and (max-width: 800px) {
+    .about-flexbox {
+        flex-direction: column;
+        p, img {
+            margin: 0 0 35px;
+        }
+        img {
+            width: 250px;
+            height: 250px;
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .about-flexbox {
+        p, img {
+            margin: 0 0 10px;
+        }
+        img {
+            width: 200px;
+            height: 200px;
+        }
+    }
+}
