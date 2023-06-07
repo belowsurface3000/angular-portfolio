@@ -1,6 +1,6 @@
 <!-- Navigation trigger button -->
 <div class="navigation-trigger" (click)="triggerNavigation()">
-    <div [ngClass]="(showNavigation) ? 'nav-icon open' : 'nav-icon'">
+    <div [ngClass]="(navigation) ? 'nav-icon open' : 'nav-icon'">
         <span></span>
         <span></span>
         <span></span>
@@ -8,7 +8,7 @@
 </div>
 
 <!-- NAVIGATION - if nav is hidden and navigation is false -->
-<nav class="navigation">
+<nav [ngClass]="(navigationHidden && !navigation) ? 'navigation' : 'navigation navigation-shown'">
     <div>
         <a href="#top" (click)="toggleNavigation()">Start</a>
         <a href="#about" (click)="toggleNavigation()">About</a>

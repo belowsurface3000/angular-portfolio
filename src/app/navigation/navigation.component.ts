@@ -8,13 +8,14 @@ import { Component } from '@angular/core';
 
 export class NavigationComponent {
 
-  showNavigation = false;
+  navigation = false;
+  navigationHidden = true;
 
   triggerNavigation() {
-    console.log("click")
+    this.navigation = !this.navigation;
   }
 
   toggleNavigation() {
-    this.showNavigation = !this.showNavigation;
+    this.navigation = !this.navigation;
   }
 }
