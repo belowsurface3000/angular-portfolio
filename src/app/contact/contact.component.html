@@ -2,7 +2,7 @@
     <h2>Contact 💌</h2>
     <p>It&apos;s all about you now! Getting in touch with us is as easy as filling out the contact form below. Simply type &quot;okay&quot; to unlock it. Please note that spam and advertising are strictly prohibited.</p>
     
-      <form *ngIf="showContactForm">
+      <form *ngIf="showContactForm" (submit)="sendEmail($event)">
         <label for="name">Your Name:</label>
         <input type="text" id="name" name="name" placeholder="Please type in your name here" required />
 
@@ -11,7 +11,7 @@
 
         <label for="message">Your Message:</label>
         <textarea id="message" name="message"></textarea>
-        
+
         <button type="submit" value="Send" class="submit-button">Send!</button>
       </form>
    
