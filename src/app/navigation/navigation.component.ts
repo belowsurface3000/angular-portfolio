@@ -21,8 +21,7 @@ export class NavigationComponent {
     this.prevScrollPos = 0;
   }
 
-  @HostListener('window:scroll', [])
-  onScroll(): void {
+  @HostListener('window:scroll', []) onScroll(): void {
     this.currentScrollPos = window.pageYOffset;
     
     if (this.currentScrollPos < window.innerHeight / 2) {
@@ -36,8 +35,7 @@ export class NavigationComponent {
     this.prevScrollPos = this.currentScrollPos;
   }
 
-  @HostListener('window:resize', [])
-  onResize(): void {
+  @HostListener('window:resize', []) onResize(): void {
     if (window.innerWidth <= 1500) {
       this.navigationHidden = true;
     } else {
