@@ -17,18 +17,22 @@
         box-shadow: $box-shadow-dark;
         @include flexBox;
         justify-content: space-between;
+
         > div {
             @include flexBox;
             flex-direction: column;
             margin-right: 15px;
+
             > a {
                 color: $sec-color;
                 margin: 10px 0;
                 border-bottom: solid 2px transparent;
             }  
+
             > a:hover {
                 border-bottom: solid 2px $sec-color;
             }
+
             // "Navigation" text on sidenav
             p {
                 font-size: 1.5rem;
@@ -38,16 +42,19 @@
             }
         }
     }
+
     nav:hover {
         cursor: pointer;
         left: -100px;
         flex-direction: row-reverse;
         background-color:rgba(255, 255, 255, 0.8);
+
         // "Navigation" text on sidenav
         p {
-            left: 0px;
+            left: 0px !important;
         }
     }
+
     nav::after {
         content: '';
         position: absolute;
@@ -72,6 +79,7 @@
     cursor: pointer;
     transition: top .4s;
     display: none;
+
     .nav-icon {
         width: 55px;
         height: 45px;
@@ -86,6 +94,7 @@
         -o-transition: .5s ease-in-out;
         transition: .5s ease-in-out;
         cursor: pointer;
+
         span {
             display: block;
             position: absolute;
@@ -108,6 +117,7 @@
         span:nth-child(2) {top: 18px;}
         span:nth-child(3) {top: 36px;}
     }
+
     .open span:nth-child(1) {
         top: 18px;
         -webkit-transform: rotate(135deg);
@@ -115,10 +125,12 @@
         -o-transform: rotate(135deg);
         transform: rotate(135deg);
     }
+
     .open span:nth-child(2) {
         opacity: 0;
         left: -60px;
     }
+
     .open span:nth-child(3) {
         top: 18px;
         -webkit-transform: rotate(-135deg);
@@ -127,6 +139,7 @@
         transform: rotate(-135deg);
     }
 }
+
 .navigation-button-hidden {
     top: -100px;
 }

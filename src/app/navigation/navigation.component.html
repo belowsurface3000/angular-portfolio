@@ -1,5 +1,5 @@
 <!-- Navigation trigger button -->
-<div class="navigation-trigger" (click)="triggerNavigation()">
+<div [ngClass]="(scrollUp) ? 'navigation-trigger': 'navigation-trigger navigation-button-hidden'" (click)="triggerNavigation()">
     <div [ngClass]="(navigation) ? 'nav-icon open' : 'nav-icon'">
         <span></span>
         <span></span>
