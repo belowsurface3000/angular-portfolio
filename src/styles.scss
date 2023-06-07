@@ -63,25 +63,29 @@ body {
     img {
         object-fit: cover;
     }
+}
 
-    main {
+main {
+    @include flexBox;
+    flex-direction: column;
+
+    > * {
+        max-width: 100%;
+    }
+
+    div.about,
+    div.projects,
+    div.skills,
+    div.contact {
+        min-height: 100vh;
+        padding: 35px 0;
+        margin: auto;
+        width: 85%;
+        max-width: 1400px;
+        border-bottom: solid 3px rgba(255,255,255,0.2);
         @include flexBox;
         flex-direction: column;
-    
-        div.about,
-        div.projects,
-        div.skills,
-        div.contact {
-            min-height: 100vh;
-            padding: 35px 0;
-            margin: auto;
-            width: 85%;
-            max-width: 1400px;
-            border-bottom: solid 3px rgba(255,255,255,0.2);
-            @include flexBox;
-            flex-direction: column;
-            position: relative;
-        }
+        position: relative;
     }
 }
 
@@ -100,11 +104,14 @@ body {
         flex-direction: column;
     }
     main {
-        > div {
-            min-height: 0;
+        div.about,
+        div.projects,
+        div.skills,
+        div.contact {
+            min-height: 0 !important;
         }
         h2 {
-            margin-top: 25px;
+            margin-top: 25px !important;
         }
     }
 }
@@ -113,13 +120,18 @@ body {
     :root {
         font-size: 70%;
     }
+
     body p {
-        line-height: 1.5;
-        word-spacing: 3px;
+        line-height: 1.5 !important;
+        word-spacing: 3px !important;
     }
+
     main {
-        > div {
-            width: 95%;
+        div.about,
+        div.projects,
+        div.skills,
+        div.contact {
+            width: 95% !important;
         }
     }
 }

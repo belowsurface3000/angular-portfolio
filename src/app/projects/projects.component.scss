@@ -93,18 +93,19 @@ div.projects-second-flexbox:nth-of-type(odd) div.project-text {
     .projects-flexbox {
         flex-direction: column-reverse;
         p, img {
-            margin: 0 0 35px;
+            margin: 0 0 35px !important;
         }
         img {
-            display: none;
+            display: none !important;
         }
     }
+
     .projects-second-flexbox {
-        .project-text {
-            flex-direction: column;
+        div.project-text {
+            flex-direction: column !important;
             > div,
             > ul {
-                width: 100%;
+                width: 100% !important;
             }
         }
         &:nth-of-type(odd) div.project-text {

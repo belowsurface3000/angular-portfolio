@@ -69,7 +69,7 @@
 
 @media screen and (max-width: 800px) {
     .contact {
-        >form {
+        > form {
             max-width: 85%;
         }
     }
@@ -78,7 +78,7 @@
 @media screen and (max-width: 500px) {
     .contact {
         > form {
-            max-width: calc( 85% - 30px);
+            max-width: calc(85% - 30px);
             padding: 25px 15px;
         }
     }
