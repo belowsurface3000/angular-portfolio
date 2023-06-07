@@ -1,0 +1,36 @@
+@import "../../reset";
+@import "../../variables";
+@import "../../mixins";
+
+.skills-first-flexbox {
+    @include flexBox;
+
+    img {
+        margin-right: 50px;
+        @include basicImage;
+    }
+}
+
+.skills-second-flexbox {
+    max-width: 100%;
+    margin: 35px 0;
+    @include flexBox;
+    flex-wrap: wrap;
+    > div {
+        width: 325px;
+        border-radius: 10px;
+        box-shadow: $box-shadow-dark;
+        margin: 15px;
+        background: rgba(0,0,0,0.2);  
+        padding: 15px;
+        ul {
+            list-style-type: '\2b50';
+            margin-top: 10px;
+            li {
+                font-size: 1.1rem;
+                padding: 5px 15px;
+                margin-left: 35px;
+            }
+        }
+    }
+}

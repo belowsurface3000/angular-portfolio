@@ -1,0 +1,11 @@
+@import "../../reset";
+@import "../../variables";
+@import "../../mixins";
+
+.about-flexbox {
+    @include flexBox;
+    img {
+        margin-left: 50px;
+        @include basicImage;
+    }
+}

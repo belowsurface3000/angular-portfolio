@@ -1,6 +1,6 @@
 <!-- Navigation trigger button -->
-<div class="navigation-trigger" onClick="">
-    <div class="nav-icon">
+<div class="navigation-trigger" (click)="triggerNavigation()">
+    <div [ngClass]="(showNavigation) ? 'nav-icon open' : 'nav-icon'">
         <span></span>
         <span></span>
         <span></span>
@@ -10,11 +10,11 @@
 <!-- NAVIGATION - if nav is hidden and navigation is false -->
 <nav class="navigation">
     <div>
-        <a href="#top" onClick="">Start</a>
-        <a href="#about" onClick="">About</a>
-        <a href="#skills" onClick="">Skills</a>
-        <a href="#projects" onClick="">Projects</a>
-        <a href="#contact" onClick="">Contact</a>
+        <a href="#top" (click)="toggleNavigation()">Start</a>
+        <a href="#about" (click)="toggleNavigation()">About</a>
+        <a href="#skills" (click)="toggleNavigation()">Skills</a>
+        <a href="#projects" (click)="toggleNavigation()">Projects</a>
+        <a href="#contact" (click)="toggleNavigation()">Contact</a>
     </div>
     <div>
         <p>Navigation</p>

@@ -1,7 +1,145 @@
-@import "fonts";
-@import "general";
-@import "header";
-@import "navigation";
-@import "main";
-@import "footer";
+@import "reset";
+@import "variables";
+@import "mixins";
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("../src/assets/fonts/montserrat-v18-latin-regular.woff2 ") format("woff2"),
+    url("../src/assets/fonts/montserrat-v18-latin-regular.woff") format("woff");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    font-weight: 200;
+    src: url("../src/assets/fonts/montserrat-v18-latin-200.woff") format("woff"),
+    url("../src/assets/fonts/montserrat-v18-latin-200.woff2") format("woff2");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    font-weight: bold;
+    src: url("../src/assets/fonts/montserrat-v18-latin-700.woff") format("woff"),
+    url("../src/assets/fonts/montserrat-v18-latin-700.woff2") format("woff2");
+    font-display: swap;
+}
+
+body {
+    font-family: Montserrat, sans-serif;
+    .background-color {
+        height: 100vh;
+        width: 100%;
+        background: linear-gradient($prim-bg, $sec-bg);
+        position: fixed;
+        top: 0;
+        z-index: -100;
+    }
+    h1, h2, h3, h4, p, a, li, label, input, textarea, button, small {
+        color: $prim-color;
+        text-shadow: $text-shadow-dark;
+    }
+    h1, h2, h3, h4 {
+        text-align: center;
+        word-break: break-word;
+    }
+    h1 {font-size: 5rem};
+    h2 {font-size: 3.5rem};
+    h3 {font-size: 2.5rem};
+    h4 {font-size: 1.4rem};
+    p, a, li, label, input, textarea, button {font-size: 1.4rem};
+    p {
+        line-height: $line-height;
+        word-spacing: 7px;
+        padding: 15px 0;
+        text-align: justify;
+        align-self: stretch;
+    }
+    a {
+        color: $prim-color;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    img {
+        object-fit: cover;
+    }
+}
+
+main {
+    @include flexBox;
+    flex-direction: column;
+
+    div.about,
+    div.projects,
+    div.skills,
+    div.contact {
+        min-height: 100vh;
+        padding: 35px 0;
+        margin: auto;
+        width: 85%;
+        max-width: 1400px;
+        border-bottom: solid 3px rgba(255,255,255,0.2);
+        @include flexBox;
+        flex-direction: column;
+        position: relative;
+    }
+
+    // Impressum and datenschutz
+    .impressum {
+        border: none;
+        > h2 {
+            margin: 35px 0
+        };
+        > h3 {
+            margin: 25px 0 0
+        };
+        > p {
+            text-align: left;
+            > b {
+                color: $prim-color;
+            }
+        }
+        button {
+            background: none;
+            outline: none;
+            border: none;
+            border: solid 1px $prim-color;
+            border-radius: 5px;
+            padding: 5px 20px;
+            box-shadow: $box-shadow-dark;
+            transition: box-shadow .2s;
+        }
+        button:hover {
+            cursor: pointer;
+            box-shadow: 0 3px 15px rgba(255,255,255,0.1);
+        }
+    }
+    // .tutorial-card-container {
+    //     margin: 35px 0;
+    //     display: flex;
+    //     flex-direction: row;
+    //     > .tutorial-card {
+    //         padding: 10px;
+    //         margin: 10px;
+    //         border: solid 3px rgba(255, 255, 255, 0.356);
+    //         border-radius: 15px;
+    //         box-shadow: 0 0 15px rgba(0,0,0,.3);
+    //         background:rgba(0,0,0,0.2);
+    //         width: 500px;
+    //         display: flex;
+    //         flex-direction: column;
+    //         justify-content: space-between;
+    //         align-items: center;
+    //         cursor: pointer;
+    //         > h3 {
+    //             font-size: 2rem;
+    //             margin-bottom: 15px;
+    //         }
+    //         img {
+    //             object-fit: contain;
+    //         }
+    //     }
+    // }
+}
+
 @import "mediaquerries";

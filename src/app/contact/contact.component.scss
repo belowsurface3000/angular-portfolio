@@ -1,0 +1,68 @@
+@import "../../reset";
+@import "../../variables";
+@import "../../mixins";
+
+.contact {
+    border-bottom: none;
+
+    > form {
+        width: 500px;
+        max-width: calc( 85% - 70px);
+        outline: solid 3px $prim-bg;
+        border-radius: 10px;
+        padding: 25px 35px;
+        margin: 35px 0;
+        box-shadow: $box-shadow-dark;
+        background: rgba(0,0,0,0.3);
+        @include flexBox;
+        flex-direction: column;
+        align-items: flex-start;
+
+        > p {
+            font-size: 1.3rem;
+        }
+
+        > label {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        > input {
+            width: 100%;
+            background: none;
+            border: none;
+            outline: none;
+            border-bottom: solid 3px $prim-color;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+        }
+
+        > textarea {
+            border: none;
+            outline: none;
+            background: none;
+            border: solid 3px $prim-color;
+            padding: 5px;
+            width: calc(100% - 10px);
+            height: 175px;
+            resize: none;
+            margin-bottom: 20px;
+        }
+
+        > button {
+            background: none;
+            outline: none;
+            border: none;
+            border: solid 1px $prim-color;
+            border-radius: 5px;
+            padding: 5px 20px;
+            box-shadow: $box-shadow-dark;
+            transition: box-shadow .2s;
+        }
+        
+        > button:hover {
+            cursor: pointer;
+            box-shadow: 0 3px 15px rgba(255,255,255,0.2);
+        }
+    }
+} 

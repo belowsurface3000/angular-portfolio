@@ -1,0 +1,90 @@
+@import "../../reset";
+@import "../../variables";
+@import "../../mixins";
+
+.projects-flexbox {
+    @include flexBox;
+
+    img {
+        margin-right: 50px;
+        @include basicImage;
+    }
+}
+
+.projects-second-flexbox {
+    margin: 15px 0;
+    padding: 5px;
+    border: solid 2px rgba(255,255,255,.2);
+    border-radius: 15px;
+    box-shadow: $box-shadow-dark;
+    background: rgba(0,0,0,.2);
+    @include flexBox;
+    flex-direction: column;
+
+    > div.project-text {
+        @include flexBox;
+
+        > div {
+            width: 30%;
+            @include flexBox;
+            flex-direction: column;
+
+            > * {
+                padding: 5px 0;
+            }
+
+            > h4 {
+                font-size: 1.8rem;
+            }
+        }
+
+        > ul {
+            width: 70%;
+            line-height: 1.6;
+            padding: 10px 0;
+
+            > li {
+                font-size: 1.2rem;
+                line-height: 1.6;
+                text-align: justify;
+                margin-left: 25px;
+                padding: 0 10px;
+            }
+        }
+    }
+
+    > div.project-images {
+        @include flexBox;
+
+        > img {
+            margin: 10px;
+            width: calc(30% - 20px);
+            border: solid 1px rgba(255,255,255.3);
+        }
+    }
+
+    > div.project-takeaways {
+
+        > ul {
+            list-style-type: '\2b50';
+            line-height: 1.6;
+            padding: 10px 0;
+
+            > li {
+                font-size: 1.2rem;
+                line-height: 1.6;
+                text-align: justify;
+                padding: 0 10px;
+                margin-left: 25px;
+                
+                > b {
+                    color: $prim-color;
+                }
+            }
+        }
+    }
+}
+
+div.projects-second-flexbox:nth-of-type(odd) div.project-text {
+    flex-direction: row-reverse;
+}
