@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './header/header.component';
 import { AboutComponent } from './about/about.component';
 import { SkillsComponent } from './skills/skills.component';
@@ -14,6 +14,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { ImpressumComponent } from './impressum/impressum.component';
 import { DatenschutzComponent } from './datenschutz/datenschutz.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -28,11 +29,16 @@ import { DatenschutzComponent } from './datenschutz/datenschutz.component';
     SpinnerComponent,
     ImpressumComponent,
     DatenschutzComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    RouterModule.forRoot([
+      {path: '', component: HomeComponent},
+      {path: 'impressum', component: ImpressumComponent},
+      {path: 'datenschutz', component: DatenschutzComponent},
+    ]),
   ],
   providers: [],
   bootstrap: [AppComponent]

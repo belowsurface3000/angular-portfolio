@@ -1,0 +1,38 @@
+@import "../../reset";
+@import "../../variables";
+@import "../../mixins";
+
+.impressum {
+    border: none;
+
+    > h2 {
+        margin: 35px 0
+    }
+
+    > h3 {
+        margin: 25px 0 0
+    }
+
+    > p {
+        text-align: left;
+        > b {
+            color: $prim-color;
+        }
+    }
+
+    button {
+        background: none;
+        outline: none;
+        border: none;
+        border: solid 1px $prim-color;
+        border-radius: 5px;
+        padding: 5px 20px;
+        box-shadow: $box-shadow-dark;
+         transition: box-shadow .2s;
+    }
+
+    button:hover {
+        cursor: pointer;
+        box-shadow: 0 3px 15px rgba(255,255,255,0.1);
+    }
+}

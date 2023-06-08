@@ -4,6 +4,7 @@
 
 .about-flexbox {
     @include flexBox;
+    
     img {
         margin-left: 50px;
         @include basicImage;
