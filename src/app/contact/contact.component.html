@@ -1,8 +1,12 @@
+<app-spinner *ngIf="sendingEmail"></app-spinner>
+
 <div class="contact" id="contact">
   <h2>Contact 💌</h2>
-  <p>It&apos;s all about you now! Getting in touch with us is as easy as filling out the contact form below. Simply type &quot;okay&quot; to unlock it. Please note that spam and advertising are strictly prohibited.</p>
+  <p *ngIf="!sentEmail">It&apos;s all about you now! Getting in touch with us is as easy as filling out the contact form below. Simply type &quot;okay&quot; to unlock it. Please note that spam and advertising are strictly prohibited.</p>
   
-  <form *ngIf="showContactForm" (submit)="sendEmail($event)">
+  <p *ngIf="sentEmail">Thank you for your message, we will get back to you as soon as possible!</p>
+
+  <form *ngIf="showContactForm && !sentEmail" (submit)="sendEmail($event)">
     <label for="name">Your Name:</label>
     <input type="text" id="name" name="name" placeholder="Please type in your name here" required />
 

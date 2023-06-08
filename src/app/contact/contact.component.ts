@@ -12,18 +12,25 @@ export class ContactComponent {
   userInput: string;
   riddle: string;
   showContactForm: boolean;
+  sendingEmail: boolean;
+  sentEmail: boolean;
 
   constructor() {
     this.userInput = "";
     this.riddle = "okay";
     this.showContactForm = false;
+    this.sendingEmail = false;
+    this.sentEmail = false;
   }
 
   public sendEmail(e: Event) {
     e.preventDefault();
+    this.sendingEmail = true;
     emailjs.sendForm(environment.EMAIL_SERVICE, environment.EMAIL_TEMPLATE, e.target as HTMLFormElement, environment.EMAIL_USER)
       .then((result: EmailJSResponseStatus) => {
-        console.log(result.text);
+        this.sentEmail = true;
+        this.sendingEmail = false;
+        // console.log(result.text);
       }, (error) => {
         console.log(error.text);
       });

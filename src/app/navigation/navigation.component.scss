@@ -5,7 +5,7 @@
 // Navigation for screens above 1500px width
 @media screen and (min-width: 1500px) {
     nav {
-        z-index: 3000;
+        z-index: 100;
         position: fixed;
         top: 50%;
         left: -250px;

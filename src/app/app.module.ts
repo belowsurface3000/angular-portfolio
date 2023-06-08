@@ -9,6 +9,7 @@ import { ProjectsComponent } from './projects/projects.component';
 import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { SpinnerComponent } from './spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { NavigationComponent } from './navigation/navigation.component';
     ProjectsComponent,
     ContactComponent,
     FooterComponent,
-    NavigationComponent
+    NavigationComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule
