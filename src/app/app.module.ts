@@ -15,6 +15,7 @@ import { SpinnerComponent } from './spinner/spinner.component';
 import { ImpressumComponent } from './impressum/impressum.component';
 import { DatenschutzComponent } from './datenschutz/datenschutz.component';
 import { HomeComponent } from './home/home.component';
+import { BackButtonComponent } from './back-button/back-button.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { HomeComponent } from './home/home.component';
     ImpressumComponent,
     DatenschutzComponent,
     HomeComponent,
+    BackButtonComponent,
   ],
   imports: [
     BrowserModule,

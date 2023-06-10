@@ -1,0 +1,20 @@
+@import "../../reset";
+@import "../../variables";
+@import "../../mixins";
+
+div.back-button-container {
+    height: 50px;
+    position: sticky;
+    top: 0;
+    @include flexBox;
+    z-index: 100;
+
+    > a {
+        border: solid 2px $prim-color;
+        background: $prim-bg;
+        border-radius: 5px;
+        padding: 0 5px;
+        font-size: 1rem;
+        box-shadow: $box-shadow-dark;
+    }
+}
